@@ -1,0 +1,209 @@
+<title>Happy 22nd Birthday, Shavira 🤍</title>
+<meta name="theme-color" content="#ffe0ea">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Quicksand:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>
+/* Layout: satu halaman pesan cinta, hero di tengah lalu kartu surat yang terbuka saat tombol ditekan */
+:root{--bg1:#fff1f5;--bg2:#ffe0ea;--card:#ffffffd9;--ink:#4a2433;--soft:#8a5a6b;--accent:#e0446f;--line:#f6c3d2;--accent-ink:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a1220;--bg2:#3d1a2e;--card:#46223ad9;--ink:#ffe9f0;--soft:#e9b6c8;--accent:#ff7da3;--line:#6b3350;--accent-ink:#3a1022;color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#2a1220;--bg2:#3d1a2e;--card:#46223ad9;--ink:#ffe9f0;--soft:#e9b6c8;--accent:#ff7da3;--line:#6b3350;--accent-ink:#3a1022;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg1)}
+body::before{content:"";position:fixed;top:0;left:0;right:0;bottom:0;background:linear-gradient(160deg,var(--bg1),var(--bg2));z-index:-1}
+body{margin:0;background:var(--bg1);min-height:100vh;min-height:100dvh;-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent;color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;font-size:16px;line-height:1.8;overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.h{position:absolute;bottom:-40px;opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.7}100%{transform:translateY(-110vh) rotate(40deg);opacity:0}}
+section{position:relative;z-index:1}
+.hero{min-height:92vh;min-height:92svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 22px}
+.cake{font-size:64px;animation:bob 2.6s ease-in-out infinite;cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding:6px 14px}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.cake.pop{animation:pop .5s ease}
+@keyframes pop{30%{transform:scale(1.35) rotate(-8deg)}60%{transform:scale(.92) rotate(6deg)}}
+.hbd{font-family:'Dancing Script',cursive;color:var(--accent);font-size:clamp(26px,6vw,38px);margin:8px 0 0}
+h1{font-family:'Playfair Display',serif;font-size:clamp(44px,13vw,92px);margin:0;line-height:1.1;letter-spacing:.5px;text-wrap:balance}
+.age{font-family:'Playfair Display',serif;font-style:italic;color:var(--soft);font-size:clamp(18px,4vw,24px);margin:6px 0 18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:6px 0 30px}
+.chip{background:var(--card);border:1px solid var(--line);padding:8px 18px;border-radius:999px;font-weight:600;color:var(--accent);box-shadow:0 6px 18px #e0446f1f;cursor:pointer;-webkit-user-select:none;user-select:none;transition:transform .15s}
+a.open{display:inline-block;text-decoration:none;text-align:center;line-height:1.2;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;min-height:48px;touch-action:manipulation;font:600 17px 'Quicksand',sans-serif;background:var(--accent);color:var(--accent-ink);border:0;padding:15px 34px;border-radius:999px;cursor:pointer;box-shadow:0 10px 26px #e0446f55;transition:transform .2s}
+a.open:hover{transform:scale(1.05)}
+a.open:active,.chip:active{transform:scale(.94)}
+a:focus-visible,button:focus-visible,.cake:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.tap{color:var(--soft);font-size:14px;margin:0 0 18px;opacity:.85}
+#letter{display:none;padding:10px 16px 70px}
+#letter.show,#letter:target{display:block}
+#letter.show{animation:fade 1s ease}
+@keyframes fade{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.card{max-width:720px;margin:0 auto;background:var(--card);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,5vw,50px);box-shadow:0 20px 50px #e0446f22}
+.card h2{font-family:'Dancing Script',cursive;color:var(--accent);font-size:34px;margin:0 0 14px;text-align:center}
+.card p{margin:0 0 18px;font-size:17px}
+.card p.big{font-family:'Playfair Display',serif;font-size:21px;text-align:center;color:var(--accent)}
+.sign{text-align:center;font-family:'Dancing Script',cursive;font-size:28px;color:var(--accent);margin-top:26px}
+.sign span{display:block;font-size:34px;margin-top:6px}
+.js .card p,.js .card h2,.js .sign{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .card .in{opacity:1;transform:none}
+footer{text-align:center;padding:0 20px 40px;color:var(--soft);position:relative;z-index:1}
+#fx{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:50;overflow:hidden}
+.b{position:absolute;font-size:22px;animation:burst .95s ease-out forwards}
+@keyframes burst{from{transform:translate(-50%,-50%) scale(.4);opacity:1}to{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.25);opacity:0}}
+
+/* tombol musik */
+#mbtn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;min-height:48px;padding:10px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--accent);font:600 15px 'Quicksand',sans-serif;cursor:pointer;box-shadow:0 8px 22px #e0446f33;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);touch-action:manipulation}
+#mbtn .ic{display:inline-block;font-size:18px}
+#mbtn.on .ic{animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#mhint{position:fixed;left:0;right:0;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:59;text-align:center;pointer-events:none;color:var(--soft);font-size:14px;padding:0 16px;transition:opacity .6s}
+#mhint.gone{opacity:0}
+
+@media (max-width:430px){.hero{padding:40px 18px}.cake{font-size:56px}.chip{padding:7px 15px;font-size:15px}#letter{padding:6px 12px 56px}.card{border-radius:22px;padding:26px 20px}.card h2{font-size:30px}.card p{font-size:16px;line-height:1.75}.card p.big{font-size:19px}}
+@media (prefers-reduced-motion:reduce){.cake,#mbtn.on .ic{animation:none}.h{display:none}html{scroll-behavior:auto}}
+</style>
+
+<div id="hearts"></div>
+<div id="fx"></div>
+
+<section class="hero">
+  <div class="cake" id="cake" role="button" tabindex="0" aria-label="Tap kue">🎂</div>
+  <p class="tap">tap kuenya, tap di mana saja ✨</p>
+  <p class="hbd">Happy Birthday</p>
+  <h1>Shavira</h1>
+  <p class="age">yang ke-22 tahun 🤍</p>
+  <div class="chips"><span class="chip">Calon Istriku</span><span class="chip">Sayangku</span><span class="chip">Cintaku</span></div>
+  <a class="open" id="btn" href="#letter" role="button">💌 Buka Pesan Untukmu</a>
+</section>
+
+<section id="letter">
+  <div class="card">
+    <h2>Message</h2>
+    <p class="big">happy 22nd birthday, shavira, sayangkuuu 🤍🎂❤️</p>
+    <p>selamat ulang tahun yaa, cintakuuu. akhirnya sekarang kamu udah 22 tahun. semoga di umur yang baru ini banyak hal baik yang datang ke hidup kamu. semoga kamu selalu sehat, bahagia, dilancarkan semua urusannya, dimudahkan rezekinya, dan apa pun yang lagi kamu usahain sekarang bisa tercapai satu per satu.</p>
+    <p>aku berdoa semoga kamu selalu dijaga sama Tuhan, di mana pun kamu berada dan dalam keadaan apa pun. kalau nanti ada hari-hari yang berat, semoga kamu selalu dikasih kekuatan buat lewatin semuanya. kalau kamu lagi capek, semoga selalu ada hal yang bisa bikin kamu tersenyum lagi. aku pengen kamu bahagia, bukan cuma hari ini karena ulang tahun, tapi juga di hari-hari biasa yang mungkin nggak selalu mudah buat kamu.</p>
+    <p>sayang, makasih ya udah hadir di hidup aku. makasih udah jadi shavira yang aku kenal dan aku sayang sampai sekarang. aku mungkin belum bisa jadi pacar yang sempurna, masih banyak kurangnya, dan masih banyak yang harus aku perbaiki. tapi aku mau terus belajar jadi lebih baik, buat diri aku sendiri dan buat hubungan kita.</p>
+    <p>jujur, salah satu hal yang aku pengenin dari hubungan ini adalah bisa terus sama kamu sampai nanti. aku pengen kita sama-sama tumbuh, sama-sama berjuang buat masa depan, dan bisa ngelewatin banyak hal bareng-bareng. aku pengen suatu hari nanti, pas kamu ulang tahun lagi, aku masih ada di samping kamu, masih jadi orang yang ngucapin selamat ulang tahun, tapi dengan status yang jauh lebih serius dari sekarang.</p>
+    <p>aku nggak tahu gimana jalan kita ke depannya, tapi aku selalu berharap semoga Tuhan kasih jalan terbaik buat kita. semoga langkah kita dipermudah sampai bisa ke jenjang yang lebih serius, sampai akhirnya aku bisa menjadikan kamu istriku. aku pengen suatu hari nanti kita bisa inget masa-masa sekarang sambil senyum, karena ternyata semua yang kita perjuangin dulu nggak sia-sia.</p>
+    <p>sekali lagi, happy birthday yaa, sayangku. jangan terlalu keras sama diri sendiri, jangan lupa bahagia, dan jangan lupa kalau kamu punya banyak hal baik dalam diri kamu. aku harap di umur 22 ini kamu bisa lebih bahagia, lebih tenang, dan lebih banyak ngerasain hal-hal yang selama ini kamu doain.</p>
+    <p class="big">i love you, shavira. i love you more than you know, more than i can explain with words, and more than i could ever show in a single message. ❤️</p>
+    <p>i love you in your happiest moments, and i love you even more when things get hard. i love you when you're smiling, when you're tired, when you're overthinking, and even when you don't feel like yourself. kamu nggak harus selalu baik-baik aja di depan aku, yaa. kamu boleh capek, boleh sedih, boleh cerita apa aja. aku mungkin nggak selalu punya jawaban buat semua masalah kamu, tapi aku mau selalu berusaha buat dengerin dan nemenin kamu.</p>
+    <p>semoga Tuhan selalu jaga kamu, hari ini, besok, dan seterusnya. semoga aku juga masih dikasih kesempatan buat nemenin kamu di setiap pertambahan umur kamu.</p>
+    <p>happy birthday, calon istriku. i love you today, i'll love you tomorrow, and i'll keep loving you as long as life gives me the chance to. semoga suatu hari nanti, aku bisa bilang semua ini langsung ke kamu, sambil meluk kamu, sebagai suami kamu. 🤍🫶🏻</p>
+    <div class="sign">dengan sepenuh cinta,<span>🤍</span></div>
+  </div>
+</section>
+<footer>Untuk Shavira, Calon Istriku · Sayangku · Cintaku</footer>
+
+<p id="mhint">🎵 sentuh layar sekali untuk memutar musik</p>
+<button id="mbtn" type="button" aria-label="Putar atau jeda musik" aria-pressed="false"><span class="ic" id="mic">🎵</span><span id="mtxt">Putar musik</span></button>
+
+<script>
+(function(){
+document.documentElement.className+=' js';
+var hearts=document.getElementById('hearts'),fx=document.getElementById('fx'),
+em=['🤍','❤️','💗','🌸','✨'],cf=['🎉','🎊','✨','💖','🤍','🎈'];
+function spawn(){var s=document.createElement('span');s.className='h';s.textContent=em[Math.floor(Math.random()*em.length)];
+s.style.left=Math.random()*100+'%';s.style.fontSize=(14+Math.random()*22)+'px';
+var d=7+Math.random()*7;s.style.animationDuration=d+'s';hearts.appendChild(s);setTimeout(function(){if(s.parentNode)s.parentNode.removeChild(s)},d*1000)}
+function burst(x,y,n,set){n=n||7;set=set||em;
+for(var i=0;i<n;i++){var b=document.createElement('span');b.className='b';
+b.textContent=set[Math.floor(Math.random()*set.length)];
+var a=Math.random()*6.283,r=50+Math.random()*80;
+b.style.left=x+'px';b.style.top=y+'px';
+b.style.setProperty('--dx',Math.cos(a)*r+'px');b.style.setProperty('--dy',(Math.sin(a)*r-30)+'px');
+fx.appendChild(b);(function(el){setTimeout(function(){if(el.parentNode)el.parentNode.removeChild(el)},1000)})(b)}}
+function pt(e){var t=(e.touches&&e.touches[0])||(e.changedTouches&&e.changedTouches[0])||e;return{x:t.clientX,y:t.clientY}}
+setInterval(spawn,700);for(var i=0;i<8;i++)setTimeout(spawn,i*150);
+
+var last=0;
+function tapAnywhere(e){var n=Date.now();if(n-last<120)return;last=n;var p=pt(e);if(p.x!=null)burst(p.x,p.y,6)}
+if(window.PointerEvent){document.addEventListener('pointerdown',tapAnywhere,{passive:true})}
+else{document.addEventListener('touchstart',tapAnywhere,{passive:true});document.addEventListener('mousedown',tapAnywhere)}
+
+var cake=document.getElementById('cake');
+function popCake(){cake.classList.remove('pop');void cake.offsetWidth;cake.classList.add('pop');
+var r=cake.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,16,cf)}
+cake.addEventListener('click',popCake);
+cake.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();popCake()}});
+
+var chips=document.querySelectorAll('.chip');
+for(var c=0;c<chips.length;c++)chips[c].addEventListener('click',function(){var r=this.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,10)});
+
+var opened=false;
+function reveal(){var els=document.querySelectorAll('.card h2,.card p,.card .sign');
+if(!('IntersectionObserver' in window)){for(var i=0;i<els.length;i++)els[i].classList.add('in');return}
+var io=new IntersectionObserver(function(en){for(var i=0;i<en.length;i++)if(en[i].isIntersecting){en[i].target.classList.add('in');io.unobserve(en[i].target)}},{threshold:.12});
+for(var j=0;j<els.length;j++)io.observe(els[j])}
+function openLetter(e){if(e&&e.preventDefault)e.preventDefault();
+var l=document.getElementById('letter'),b=document.getElementById('btn');
+var r=b.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,18,cf);
+for(var i=0;i<20;i++)setTimeout(spawn,i*70);
+if(!opened){opened=true;l.classList.add('show');l.style.display='block';reveal();b.textContent='💗 Selamat Ulang Tahun!'}
+setTimeout(function(){try{l.scrollIntoView({behavior:'smooth',block:'start'})}catch(x){l.scrollIntoView()}},120)}
+document.getElementById('btn').addEventListener('click',openLetter);
+
+/* ===== Musik romantis: Canon in D (domain publik), dibuat langsung di browser ===== */
+var AC=window.AudioContext||window.webkitAudioContext,ctx=null,master=null,verb=null,
+    started=false,playing=false,timer=null,nextT=0,step=0,EIGHTH=0.42;
+var mbtn=document.getElementById('mbtn'),mtxt=document.getElementById('mtxt'),mhint=document.getElementById('mhint');
+var CH=[
+ {b:146.83,n:[293.66,369.99,440,587.33],m:739.99},
+ {b:110,n:[220,277.18,329.63,440],m:659.25},
+ {b:123.47,n:[246.94,293.66,369.99,493.88],m:587.33},
+ {b:92.5,n:[185,220,277.18,369.99],m:554.37},
+ {b:98,n:[196,246.94,293.66,392],m:493.88},
+ {b:146.83,n:[293.66,369.99,440,587.33],m:440},
+ {b:98,n:[196,246.94,293.66,392],m:493.88},
+ {b:110,n:[220,277.18,329.63,440],m:554.37}
+];
+var PAT=[0,1,2,3,2,1,2,3];
+function makeVerb(){var len=ctx.sampleRate*2.6,buf=ctx.createBuffer(2,len,ctx.sampleRate);
+for(var ch=0;ch<2;ch++){var d=buf.getChannelData(ch);for(var i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2.6)}
+var cv=ctx.createConvolver();cv.buffer=buf;return cv}
+function tone(f,t,dur,vol,type){
+ var g=ctx.createGain(),o=ctx.createOscillator(),o2=ctx.createOscillator(),g2=ctx.createGain();
+ o.type=type||'triangle';o.frequency.value=f;o2.type='sine';o2.frequency.value=f*2;g2.gain.value=.25;
+ g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(vol,t+.015);
+ g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+ o.connect(g);o2.connect(g2);g2.connect(g);g.connect(master);
+ o.start(t);o2.start(t);o.stop(t+dur+.05);o2.stop(t+dur+.05)}
+function schedule(){
+ while(nextT<ctx.currentTime+.8){
+  var ci=Math.floor(step/8)%CH.length,si=step%8,ch=CH[ci];
+  if(si===0){tone(ch.b,nextT,EIGHTH*8,.22,'sine');tone(ch.m,nextT+.02,EIGHTH*4,.13,'triangle')}
+  if(si===4&&ci%2===1){tone(ch.m*1.0,nextT,EIGHTH*3,.07,'sine')}
+  tone(ch.n[PAT[si]],nextT,EIGHTH*2.6,.1,'triangle');
+  nextT+=EIGHTH;step++}}
+function setUI(on){mbtn.className=on?'on':'';mbtn.setAttribute('aria-pressed',on?'true':'false');
+ mtxt.textContent=on?'Musik menyala':'Putar musik';if(on)mhint.className='gone'}
+function startMusic(){
+ if(!AC)return;
+ if(!ctx){ctx=new AC();master=ctx.createGain();master.gain.value=0;
+  verb=makeVerb();var wet=ctx.createGain();wet.gain.value=.55;
+  master.connect(ctx.destination);master.connect(verb);verb.connect(wet);wet.connect(ctx.destination)}
+ var go=function(){
+  if(ctx.state!=='running')return;
+  if(!started){started=true;nextT=ctx.currentTime+.1;step=0;timer=setInterval(schedule,200);schedule()}
+  master.gain.cancelScheduledValues(ctx.currentTime);
+  master.gain.setValueAtTime(master.gain.value,ctx.currentTime);
+  master.gain.linearRampToValueAtTime(.8,ctx.currentTime+2.5);
+  playing=true;setUI(true)};
+ var p=ctx.resume();
+ if(p&&p.then){p.then(go,function(){})}else{go()}}
+function stopMusic(){
+ if(!ctx)return;
+ master.gain.cancelScheduledValues(ctx.currentTime);
+ master.gain.setValueAtTime(master.gain.value,ctx.currentTime);
+ master.gain.linearRampToValueAtTime(0,ctx.currentTime+.4);
+ setTimeout(function(){if(!playing&&ctx)ctx.suspend()},500);
+ playing=false;setUI(false)}
+mbtn.addEventListener('click',function(){if(playing)stopMusic();else startMusic()});
+
+/* coba putar otomatis; kalau browser menahannya, mulai di sentuhan pertama */
+var gestureDone=false;
+function onFirstGesture(e){
+ if(gestureDone)return;
+ if(e&&e.target&&mbtn.contains(e.target))return;
+ gestureDone=true;
+ ['pointerdown','touchend','click','keydown'].forEach(function(n){document.removeEventListener(n,onFirstGesture,true)});
+ if(!playing)startMusic()}
+['pointerdown','touchend','click','keydown'].forEach(function(n){document.addEventListener(n,onFirstGesture,true)});
+try{startMusic()}catch(x){}
+})();
+</script>
